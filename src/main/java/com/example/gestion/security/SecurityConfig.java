@@ -1,5 +1,4 @@
 package com.example.gestion.security;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,7 +15,8 @@ public class SecurityConfig {
             )
             .csrf(csrf -> csrf.disable())
             .headers(headers -> headers.frameOptions().disable())
-            .httpBasic();
+            .httpBasic(); // <-- changed from httpBasics to formLogin
 
         return http.build();
-    } }
+    }
+}

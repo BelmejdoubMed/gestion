@@ -2,6 +2,8 @@ package com.example.gestion.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,6 +33,7 @@ public class Order {
     // Relationships
     //-------------------------------------------------------------------
     @ManyToOne
+    @JsonIgnore   // Prevents circular references in JSON serialization
     private Customer customer;
 
     //-------------------------------------------------------------------
